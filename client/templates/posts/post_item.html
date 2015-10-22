@@ -3,5 +3,10 @@
     <div class="post-content">
       <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
     </div>
+    <!-- Iron Router 是足够聪明地自己去发现_id,路由器将会在 {{pathFor 'postPage'}}
+        的上下文环境（即 this 对象）中寻找这个 _id。而在这里，
+        this 对象对应着一个帖子，它就是我们要寻找的拥有 _id 属性的地方。
+   -->
+    <a href="{{pathFor 'postPage'}}" class="discuss btn btn-default">评论</a>
   </div>
 </template>

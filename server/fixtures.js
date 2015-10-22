@@ -1,3 +1,4 @@
+//初始话服务器的数据
 if (Posts.find().count() == 0) {
   Posts.insert({
     title: 'Introducing Telescope',
