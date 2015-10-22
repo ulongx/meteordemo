@@ -1,12 +1,24 @@
 <template name="layout">
   <div class="container">
-    <header class="navbar navbar-default" role="navigation">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="{{pathFor 'postsList'}}">Microscope</a>
-      </div>
-    </header>
+    {{>header}}
     <div id="main" class="row-fluid">
       {{> yield}}
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="row text-center">
+      <div class="col-xs-6 col-sm-3 ">
+          <div class="icon_shows">
+            <img src="images/saleware.png" alt="" />
+            <p>第一</p>
+          </div>
+      </div>
+      <div class="col-xs-6 col-sm-3">第三个</div>
+      <!-- Add the extra clearfix for only the required viewport -->
+      <div class="clearfix visible-xs-block"></div>
+      <div class="col-xs-6 col-sm-3">第三个</div>
+      <div class="col-xs-6 col-sm-3">第四个</div>
     </div>
   </div>
 </template>

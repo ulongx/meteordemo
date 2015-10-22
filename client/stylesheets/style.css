@@ -10,7 +10,9 @@
 
 body {
   background: #eee;
-  color: #666666; }
+  color: #666666;
+  margin-bottom: 100px;
+}
 
 #main {
   position: relative;
@@ -159,3 +161,13 @@ body {
   margin-bottom: 5px;
   pointer-events: auto;
 }
+
+#footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 60px;
+  background-color: #fff;
+  line-height: 60px;
+}
+.icon_shows img{width: 20px;height: 20px;}
