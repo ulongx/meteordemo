@@ -11,7 +11,8 @@
     </div>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
-        <li><a href="{{pathFor 'postSubmit'}}">发布新帖</a></li>
+        <!-- currentUser 的 Helper 是通过 accounts 包提供给我们的，它相当于是 Meteor.user() 的调用 -->
+        {{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">发布新帖</a></li>{{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{> loginButtons}}

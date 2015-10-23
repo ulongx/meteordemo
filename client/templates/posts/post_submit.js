@@ -9,7 +9,22 @@ Template.postSubmit.events({
       title: $(e.target).find('[name=title]').val()
     };
 
-    post._id = Posts.insert(post);
-    Router.go('postPage', post);
+    // post._id = Posts.insert(post);
+    // Router.go('postPage', post);
+    /*Collection 的 insert、update 和 remove 都属于 Meteor 内置方法,使用内置方法插入数据
+    postInsert:在公用lib posts里面定义的插入方法
+    */
+    Meteor.call("postInsert", post, function(error, result){
+      if(error){
+        console.log("error", error);
+      }
+      // 显示结果，跳转页面
+      // if (result.postExists)
+      //   alert('This link has already been posted（该链接记录已经存在）');
+
+      if(result){
+        Router.go('postPage', {_id: result._id});
+      }
+    });
   }
 });
