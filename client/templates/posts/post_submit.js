@@ -23,8 +23,9 @@ Template.postSubmit.events({
       //   alert('This link has already been posted（该链接记录已经存在）');
 
       if(result){
-        Router.go('postPage', {_id: result._id});
+        // Router.go('postPage', {_id: result._id});
       }
     });
+    Router.go('postsList');
   }
 });

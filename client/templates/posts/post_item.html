@@ -2,6 +2,10 @@
   <div class="post">
     <div class="post-content">
       <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+      <p>
+        submitted by {{author}}
+        {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">编辑</a>{{/if}}
+      </p>
     </div>
     <!-- Iron Router 是足够聪明地自己去发现_id,路由器将会在 {{pathFor 'postPage'}}
         的上下文环境（即 this 对象）中寻找这个 _id。而在这里，
