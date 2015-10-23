@@ -1,0 +1,26 @@
+<template name="notifications">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    通知
+    {{#if notificationCount}}
+      <span class="badge badge-inverse">{{notificationCount}}</span>
+    {{/if}}
+    <b class="caret"></b>
+  </a>
+  <ul class="notification dropdown-menu">
+    {{#if notificationCount}}
+      {{#each notifications}}
+        {{> notificationItem}}
+      {{/each}}
+    {{else}}
+      <li><span>没有通知</span></li>
+    {{/if}}
+  </ul>
+</template>
+
+<template name="notificationItem">
+  <li>
+    <a href="{{notificationPostPath}}">
+      <strong>{{commenterName}}</strong> 评论了你的贴子
+    </a>
+  </li>
+</template>
