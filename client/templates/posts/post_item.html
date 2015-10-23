@@ -3,7 +3,8 @@
     <div class="post-content">
       <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
       <p>
-        submitted by {{author}}
+        {{author}} 创建,
+        <a href="{{pathFor 'postPage'}}">{{commentsCount}} 评论</a>
         {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">编辑</a>{{/if}}
       </p>
     </div>
