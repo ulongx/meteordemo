@@ -27,11 +27,11 @@ Template.postSubmit.events({
     */
     Meteor.call("postInsert", post, function(error, result){
       if(error){
-        throwError(error);
+        Errors.throw(error);
       }
       // 显示结果，跳转页面
       if (result.postExists)
-        throwError('该链接记录已经存在');
+        Errors.throw('该链接记录已经存在');
 
       if(result){
          Router.go('postPage', {_id: result._id});

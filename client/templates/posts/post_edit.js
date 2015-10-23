@@ -30,7 +30,7 @@ Template.postEdit.events({
     Posts.update(currentPostId, {$set: postProperties}, function(error) {
       if (error) {
         // 向用户显示错误信息
-        throwError(error.reason);
+        Errors.throw(error.reason);
       } else {
         Router.go('postPage', {_id: currentPostId});
       }

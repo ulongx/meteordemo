@@ -25,3 +25,4 @@ accounts-password
 audit-argument-checks
 check
 ejson
+ulongx:errors
