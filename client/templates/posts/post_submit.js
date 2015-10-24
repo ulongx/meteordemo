@@ -3,6 +3,14 @@
 Template.postSubmit.onCreated = function(){
    Session.set('postSubmitErrors', {});
 };
+Template.postSubmit.helpers({
+  errorMessage: function(field) {
+    return Session.get('postSubmitErrors')[field];
+  },
+  errorClass: function (field) {
+    return !!Session.get('postSubmitErrors')[field] ? 'has-error' : '';
+  }
+});
 /*最好使用 submit 事件（而不是按钮的 click 事件），因为这会覆盖所有可能的提交方式（比如敲击回车键）。
 我们需要调用 event 的 preventDefault 方法来确保浏览器不会再继续尝试提交表单。*/
 Template.postSubmit.events({
@@ -38,15 +46,5 @@ Template.postSubmit.events({
       }
     });
     //Router.go('postsList');
-  }
-});
-
-
-Template.postSubmit.helpers({
-  errorMessage: function(field) {
-    return Session.get('postSubmitErrors')[field];
-  },
-  errorClass: function (field) {
-    return !!Session.get('postSubmitErrors')[field] ? 'has-error' : '';
   }
 });
