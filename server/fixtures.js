@@ -14,9 +14,9 @@ if (Posts.find().count() === 0) {
   var sacha = Meteor.users.findOne(sachaId);
 
   var ulongxId = Meteor.users.insert({
-    profile: { name: 'ulongxId' }
+    profile: { name: 'ulong xu' }
   });
-  var ulongx = Meteor.users.findOne(tomId);
+  var ulongx = Meteor.users.findOne(ulongxId);
 
   var telescopeId = Posts.insert({
     title: 'Introducing Telescope',
